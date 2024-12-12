@@ -9,12 +9,13 @@ const App = () => {
   const [user, setUser] = useState(null);
   const [loggedInUserData, setLoggedInUserData] = useState(null);
   const AuthData = useContext(AuthContext);
-
+  // console.log(AuthData) pass
   useEffect(() => {
     const loggedInUser = localStorage.getItem("loggedin");
     if (loggedInUser) {
       try {
         const userData = JSON.parse(loggedInUser);
+       
         if (userData) {
           setUser(userData.role);
           //console.log(userData.role)
@@ -28,18 +29,17 @@ const App = () => {
       }
     }
   }, []);
-
+  // console.log(loggedInUserData)
   const handleLogin = (email, password) => {
-    if (
-      AuthData &&
-      AuthData.admin.find((e) => email == e.email && password == e.password)
-    ) {
+    // console.log(email,password)
+    if (email == 'a@e.com' && password == '123') {
       setUser("admin");
-      localStorage.setItem("loggedin", JSON.stringify({ role: "admin" }));
+      localStorage.setItem("loggedin", JSON.stringify({ role: "admin",data:'' }));
     } else if (AuthData) {
       const employee = AuthData.employees.find(
         (e) => email == e.email && password == e.password
       );
+      console.log(employee);
       if (employee) {
         setLoggedInUserData(employee);
         setUser("employee");
@@ -53,9 +53,9 @@ const App = () => {
       alert("invalid input ");
     }
   };
-
+  //
   // try the context api
- // console.log(loggedInUserData);
+  // console.log(loggedInUserData); undefine
   return (
     <>
       {/* first inster Login page */}

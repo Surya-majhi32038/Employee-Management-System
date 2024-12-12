@@ -4,9 +4,8 @@ import { getData, setData } from "../utils/localStorage";
 export const AuthContext = createContext();
 
 const AuthProvider = ({ children }) => {
-  // localStorage.clear();
   const [userData, setUserData] = useState("");
-
+  //localStorage.clear();
   useEffect(() => {
     setData();
     const { employees, admin } = getData();

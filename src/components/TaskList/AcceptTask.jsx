@@ -2,6 +2,14 @@ import React from 'react'
 
 const AcceptTask = ({data}) => {
   console.log(data)
+  const handleComplete = ()=>{
+    
+    
+  }
+  const handleFailed = ()=>{
+
+  }
+
   return (
     <div className='bg-red-300 p-5 flex-shrink-0 h-full w-[300px] rounded-lg' >
           <div className='flex justify-between items-center'>
@@ -15,8 +23,8 @@ const AcceptTask = ({data}) => {
           </div>
 
           <div className='flex gap-3   justify-evenly mt-6 text-[14px]'>
-            <p className='bg-green-500 py-1  cursor-pointer rounded px-2'>Mark as Completed</p>
-            <p  className='bg-red-500 py-1 cursor-pointer rounded px-2'>Mark as Failed</p>
+            <p onClick={handleComplete} className='bg-green-500 py-1  cursor-pointer rounded px-2'>Mark as Completed</p>
+            <p onClick={handleFailed} className='bg-red-500 py-1 cursor-pointer rounded px-2'>Mark as Failed</p>
           </div>
         </div>
   )

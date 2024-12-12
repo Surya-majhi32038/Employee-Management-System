@@ -5,11 +5,11 @@ import FailedTask from "./FailedTask";
 import NewTask from "./NewTask";
 
 const TaskList = ({ data }) => {
- // console.log(data);
+  console.log(data);
   return (
     <div
       id="taskList"
-      className=" flex px-9 py-5 gap-5 overflow-x-auto items-center justify-start flex-nowrap mt-10 w-full h-[48%]"
+      className=" flex px-9 ph:px-8 py-5 gap-5 overflow-x-auto items-center justify-start flex-nowrap mt-10 w-full h-[48%]"
     >
       {data.tasks.map((ele,index)=>{
         console.log(ele)
