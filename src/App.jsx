@@ -11,7 +11,7 @@ const App = () => {
   const AuthData = useContext(AuthContext);
   // console.log(AuthData) pass
   useEffect(() => {
-    const loggedInUser = localStorage.getItem("loggedin");
+    const loggedInUser = localStorage.getItem("loggedin") ? localStorage.getItem("loggedin") : '';
     if (loggedInUser) {
       try {
         const userData = JSON.parse(loggedInUser);
